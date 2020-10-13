@@ -11,16 +11,26 @@ struct RedditPostListView: View {
     @EnvironmentObject var userData: UserData
     
     var body: some View {
-        if userData.redditPosts.isEmpty {
-            ProgressView().onAppear(perform: loadData)
-        } else {
-            List {
-                ForEach(userData.redditPosts) { redditPost in
-                    RedditPostListItemView(redditPost: redditPost)
-                }
-            }
+        NavigationView {
+            content
+                .navigationBarTitle("League of Legends")
+                .onAppear(perform: loadData)
         }
-        
+    }
+    
+    private var content: some View {
+        if userData.redditPosts.isEmpty {
+            return AnyView(ProgressView())
+        } else {
+            return AnyView(
+                List {
+                    ForEach(userData.redditPosts) { redditPost in
+                        RedditPostListItemView(redditPost: redditPost)
+                        
+                    }
+                }
+            )
+        }
     }
     
     func loadData() {

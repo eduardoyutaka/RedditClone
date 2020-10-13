@@ -23,6 +23,12 @@ struct RedditPostListItemView: View {
                     .font(.headline)
                 Spacer()
             }
+            if redditPost.thumbnail != "self" && redditPost.thumbnail != "default" {
+                AsyncImage<Text>(
+                    url: URL(string: redditPost.thumbnail)!,
+                    placeholder: Text("Loading...")
+                ).aspectRatio(contentMode: .fit)
+            }
         }.padding(20)
     }
 }
