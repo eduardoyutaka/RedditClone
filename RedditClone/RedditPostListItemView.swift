@@ -17,6 +17,7 @@ struct RedditPostListItemView: View {
                 Text("-")
                 Text(Helper.formatDatetime(redditPost.created_utc))
                 Spacer()
+                Text("\n")
             }.font(.caption)
             HStack {
                 Text(redditPost.title)

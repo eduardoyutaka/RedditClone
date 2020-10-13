@@ -25,7 +25,9 @@ struct RedditPostListView: View {
             return AnyView(
                 List {
                     ForEach(userData.redditPosts) { redditPost in
-                        RedditPostListItemView(redditPost: redditPost)
+                        NavigationLink(destination: RedditPostDetailView(redditPost: redditPost)) {
+                            RedditPostListItemView(redditPost: redditPost)
+                        }
                         
                     }
                 }
