@@ -11,7 +11,8 @@ import SwiftUI
 struct RedditCloneApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RedditPostListView()
+                .environmentObject(UserData())
         }
     }
 }

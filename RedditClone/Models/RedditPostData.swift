@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct RedditPostData: Codable {
+struct RedditPostData: Hashable, Codable, Identifiable {
     let author: String
+    let created_utc: Double
+    let id: String
     let selftext: String
     let title: String
     let thumbnail: String
-    let created_utc: Int
 }
