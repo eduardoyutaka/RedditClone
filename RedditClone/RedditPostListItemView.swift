@@ -12,9 +12,10 @@ struct RedditPostListItemView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 5)
+            RoundedRectangle(cornerRadius: 8)
+                .padding(.vertical, 5)
                 .foregroundColor(.white)
-                .shadow(radius: 5)
+                .shadow(radius: 5, x: 3, y: 3)
             
             VStack(alignment: .leading) {
                 HStack {
@@ -34,10 +35,12 @@ struct RedditPostListItemView: View {
                         placeholder: Text("Loading...")
                     ).aspectRatio(contentMode: .fit)
                 }
-            }.padding()
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 30)
         }
         .foregroundColor(.black)
-        .padding(.horizontal, 5)
+        .padding(.horizontal, 10)
     }
 }
 

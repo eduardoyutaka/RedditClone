@@ -32,7 +32,7 @@ struct RedditPostListView: View {
                             
                         }
                     }
-                }.background(Color(#colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)).edgesIgnoringSafeArea([.all]))
+                }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)).edgesIgnoringSafeArea([.all]))
             )
         }
     }
