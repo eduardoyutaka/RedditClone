@@ -23,14 +23,16 @@ struct RedditPostListView: View {
             return AnyView(ProgressView())
         } else {
             return AnyView(
-                List {
-                    ForEach(userData.redditPosts) { redditPost in
-                        NavigationLink(destination: RedditPostDetailView(redditPost: redditPost)) {
-                            RedditPostListItemView(redditPost: redditPost)
+                ScrollView {
+                    LazyVStack {
+                        ForEach(userData.redditPosts) { redditPost in
+                            NavigationLink(destination: RedditPostDetailView(redditPost: redditPost)) {
+                                RedditPostListItemView(redditPost: redditPost)
+                            }
+                            
                         }
-                        
                     }
-                }
+                }.background(Color(#colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)).edgesIgnoringSafeArea([.all]))
             )
         }
     }
@@ -51,6 +53,13 @@ struct RedditPostListView: View {
                 }
              }
         }.resume()
+    }
+}
+
+struct Card: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 5)
+            .shadow(radius: 5)
     }
 }
 

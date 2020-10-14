@@ -8,7 +8,7 @@
 import Foundation
 
 extension RedditPostData {
-    static let redditPosts = [
+    static let data = [
         RedditPostData(
             author: "eduardoyutaka",
             created_utc: 1602568609,
