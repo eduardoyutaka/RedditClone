@@ -12,6 +12,12 @@ struct RedditPostDetailView: View {
     
     var body: some View {
         ScrollView {
+            HStack {
+                Text("POST")
+                    .font(.headline)
+                Spacer()
+            }.padding(.horizontal)
+            
             LazyVStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
@@ -21,19 +27,33 @@ struct RedditPostDetailView: View {
                     VStack {
                         HStack {
                             Text(Helper.formatUsername(redditPost.author))
+                                .font(.caption)
                             Spacer()
                             Text(Helper.formatDatetime(redditPost.created_utc))
-                        }.font(.caption).padding(.bottom)
+                                .font(.caption)
+                        }.padding(.bottom)
                         HStack {
-                            Text(redditPost.title).font(.headline)
+                            Text(redditPost.title)
+                                .font(.headline)
                             Spacer()
                         }
                         HStack {
-                            Text(redditPost.selftext).font(.body)
+                            Text(redditPost.selftext)
+                                .font(.body)
                             Spacer()
                         }
                     }.padding()
                 }.padding(.horizontal, 10)
+                
+                HStack {
+                    Text("BEST COMMENTS")
+                        .font(.headline)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                .padding(.top)
+                
+                RedditCommentListView()
             }
         }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)).edgesIgnoringSafeArea([.all]))
     }

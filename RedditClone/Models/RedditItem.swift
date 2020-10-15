@@ -23,8 +23,10 @@ struct RedditItem: Codable {
             data = try container.decode(RedditComment.self, forKey: .data)
         case "t3":
             data = try container.decode(RedditPost.self, forKey: .data)
+        case "more":
+            data = RedditMoreChildren.nullObject()
         default:
-            fatalError("Type has not been implemented")
+            fatalError("Kind has not been implemented")
         }
     }
 }

@@ -9,8 +9,8 @@ import Foundation
 
 struct RedditListing: Codable {
     let modhash: String
-    let dist: Int
+    let dist: Int?
     let children: [RedditItem]
-    let after: String
+    let after: String?
     let before: String?
 }
