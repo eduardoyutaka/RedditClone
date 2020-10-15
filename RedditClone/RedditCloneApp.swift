@@ -12,7 +12,6 @@ struct RedditCloneApp: App {
     var body: some Scene {
         WindowGroup {
             RedditPostListView()
-                .environmentObject(UserData())
         }
     }
 }
