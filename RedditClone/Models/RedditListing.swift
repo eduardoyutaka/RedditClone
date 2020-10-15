@@ -10,7 +10,7 @@ import Foundation
 struct RedditListing: Codable {
     let modhash: String
     let dist: Int
-    let children: [RedditPost]
+    let children: [RedditItem]
     let after: String
     let before: String?
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RedditPostListItemView: View {
-    var redditPost: RedditPostData
+    var redditPost: RedditPost
     
     var body: some View {
         ZStack {
@@ -49,7 +49,7 @@ struct RedditPostListItemView: View {
 struct RedditPostListItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RedditPostListItemView(redditPost: RedditPostData.data[0])
+            RedditPostListItemView(redditPost: RedditPost.data[0])
         }
     }
 }

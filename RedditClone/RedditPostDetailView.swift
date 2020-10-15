@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RedditPostDetailView: View {
-    var redditPost: RedditPostData
+    var redditPost: RedditPost
     
     var body: some View {
         ScrollView {
@@ -41,6 +41,6 @@ struct RedditPostDetailView: View {
 
 struct RedditPostDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RedditPostDetailView(redditPost: RedditPostData.data[0])
+        RedditPostDetailView(redditPost: RedditPost.data[0])
     }
 }

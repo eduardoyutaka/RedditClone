@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 final class UserData: ObservableObject {
-    @Published var redditPosts: [RedditPostData] = []
+    @Published var redditPosts: [RedditPost] = []
 }

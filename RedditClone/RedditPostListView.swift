@@ -47,8 +47,9 @@ struct RedditPostListView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let response = try? JSONDecoder().decode(RedditResponse.self, from: data) {
+                    print(response)
                     DispatchQueue.main.async {
-                        userData.redditPosts = response.data.children.map { $0.data }
+                        userData.redditPosts = response.data.children.map { $0.data as! RedditPost }
                     }
                 }
              }
