@@ -144,11 +144,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A2D942325390BD000F28DC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AC54FB625351D3A00CBE7C3 /* RedditPostListView.swift */,
+				2AC54FF02535FC2D00CBE7C3 /* RedditPostListItemView.swift */,
+				2AB073CE2536408300474661 /* RedditPostDetailView.swift */,
+				2AB074122538E68A00474661 /* RedditCommentListView.swift */,
+				2AB073D82537B06700474661 /* RedditCommentListItemView.swift */,
+				2AB073C725362D6300474661 /* AsyncImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2AB074262538EA7600474661 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				2AB0741F2538E90900474661 /* RedditCommentListViewModel.swift */,
 				2A2D94192539080500F28DC0 /* RedditPostListViewModel.swift */,
+				2AB0741F2538E90900474661 /* RedditCommentListViewModel.swift */,
+				2AB073C025362CCA00474661 /* ImageLoader.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -163,8 +177,6 @@
 				2AC54FDB253525EB00CBE7C3 /* RedditPost.swift */,
 				2AB073F8253898C400474661 /* RedditComment.swift */,
 				2AB0742A2538F32900474661 /* RedditMoreChildren.swift */,
-				2AB073C025362CCA00474661 /* ImageLoader.swift */,
-				2AB073C725362D6300474661 /* AsyncImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,14 +205,10 @@
 			isa = PBXGroup;
 			children = (
 				2AFDE4BA252F8A8400462BFC /* RedditCloneApp.swift */,
-				2AC54FB625351D3A00CBE7C3 /* RedditPostListView.swift */,
-				2AC54FF02535FC2D00CBE7C3 /* RedditPostListItemView.swift */,
-				2AB073CE2536408300474661 /* RedditPostDetailView.swift */,
-				2AB074122538E68A00474661 /* RedditCommentListView.swift */,
-				2AB073D82537B06700474661 /* RedditCommentListItemView.swift */,
 				2AFDE4BE252F8A8900462BFC /* Assets.xcassets */,
 				2AFDE4C3252F8A8900462BFC /* Info.plist */,
 				2AC54FE82535FB3E00CBE7C3 /* Models */,
+				2A2D942325390BD000F28DC0 /* Views */,
 				2AB074262538EA7600474661 /* View Models */,
 				2AFDE4C0252F8A8900462BFC /* Preview Content */,
 				2AC5500B2536094D00CBE7C3 /* Helper.swift */,

@@ -20,6 +20,9 @@ struct RedditPostListView: View {
                         ForEach(vm.redditPosts) { redditPost in
                             NavigationLink(destination: RedditPostDetailView(redditPost: redditPost)) {
                                 RedditPostListItemView(redditPost: redditPost)
+                                    .onAppear(perform: {
+                                        vm.loadMore(after: redditPost)
+                                    })
                             }
                             
                         }
