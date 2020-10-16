@@ -29,8 +29,12 @@ struct RedditPostDetailView: View {
                             Text(Helper.formatUsername(redditPost.author))
                                 .font(.caption)
                             Spacer()
-                            Text(Helper.formatDatetime(redditPost.created_utc))
-                                .font(.caption)
+                            Text(
+                                Helper.formatElapsedTimeInHours(
+                                    Helper.elapsedTimeInHours(since: redditPost.created_utc)
+                                )
+                            )
+                            .font(.caption)
                         }.padding(.bottom)
                         HStack {
                             Text(redditPost.title)

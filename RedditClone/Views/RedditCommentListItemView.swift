@@ -22,7 +22,11 @@ struct RedditCommentListItemView: View {
                     Text(Helper.formatUsername(redditComment.author))
                         .font(.caption)
                     Spacer()
-                    Text(Helper.formatDatetime(redditComment.created_utc))
+                    Text(
+                        Helper.formatElapsedTimeInHours(
+                            Helper.elapsedTimeInHours(since: redditComment.created_utc)
+                        )
+                    )
                         .font(.caption)
                 }.padding(.bottom)
                 HStack {

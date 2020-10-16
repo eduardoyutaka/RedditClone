@@ -12,9 +12,19 @@ struct Helper {
         return "u/\(username)"
     }
     
-    static func formatDatetime(_ datetime: Double) -> String {
+    static func formatElapsedTimeInHours(_ elapsedTimeInHours: Int) -> String {
+        if elapsedTimeInHours < 24 {
+            return String(elapsedTimeInHours) + "h"
+        } else {
+            let elapsedTimeInDays = elapsedTimeInHours / 24
+            return String(elapsedTimeInDays) + "d"
+        }
+    }
+    
+    static func elapsedTimeInHours(since unixTime: Double) -> Int {
         let today = Date(timeIntervalSinceNow: 0)
-        let createdAt = Date(timeIntervalSince1970: datetime)
-        return String(Int((today.timeIntervalSinceReferenceDate - createdAt.timeIntervalSinceReferenceDate) / 3600)) + "h"
+        let createdAt = Date(timeIntervalSinceNow: unixTime)
+        let result = Int((today.timeIntervalSinceReferenceDate - createdAt.timeIntervalSinceReferenceDate) / 3600)
+        return result
     }
 }
